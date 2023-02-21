@@ -20,7 +20,8 @@ class MovieFactory extends Factory
             'name' => $this->faker->unique()->text(10),
             'studio' => $this->faker->text(10),
             'description' => collect($this->faker->paragraphs(6))->map(fn($item) => "<p>{$item}</p>")->implode(''),
-            'slug' => $this->faker->unique()->slug
+            'slug' => $this->faker->unique()->slug,
+            'image' => $this->faker->image
         ];
     }
 }

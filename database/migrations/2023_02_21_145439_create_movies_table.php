@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('studio');
             $table->text('description');
             $table->string('slug');
+            $table->string('image');
             $table->timestamps();
         });
     }
