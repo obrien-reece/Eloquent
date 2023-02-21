@@ -5,6 +5,15 @@
 @push('styles')
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Luxurious+Roman&display=swap');
+        .box-shadow-hover:hover {
+            box-shadow: 0 2px 5px 0 rgba(227, 166, 200, 1), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+        .box-shadow-hover {
+            transition: box-shadow 0.5s;
+        }
+        .pointer {
+            cursor: pointer;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
@@ -24,9 +33,11 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card">
+                            <div class="card box-shadow-hover pointer">
                                 <div class="card shadow">
-                                    <img src="images/banner.jpg" alt="">
+                                    <a href="/movies/">
+                                        <img src="images/banner.jpg" style="border-radius: 5px" width="100%" alt="">
+                                    </a>
                                     <div class="card-body">
                                         <span class="card-left-text">
                                             <strong>Kes 1,490,000</strong>
