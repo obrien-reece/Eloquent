@@ -31,7 +31,7 @@
                     </div>
                     <br><br>
                     <div class="row">
-                        @foreach($movies as $movie)
+                        @forelse($movies as $movie)
                             <div class="col-md-3 mb-3">
                                 <div class="card box-shadow-hover pointer">
                                     <div class="card shadow">
@@ -63,7 +63,11 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="text-center">
+                                <span>No movies in the catalogue to display, please come back later</span>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
