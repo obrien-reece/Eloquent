@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Director;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +19,11 @@ class MovieFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->text(10),
+            'director_id' => Director::factory(),
             'studio' => $this->faker->text(10),
             'description' => collect($this->faker->paragraphs(6))->map(fn($item) => "<p>{$item}</p>")->implode(''),
             'slug' => $this->faker->unique()->slug,
-            'image' => $this->faker->image
+//            'image' => $this->faker->image
         ];
     }
 }

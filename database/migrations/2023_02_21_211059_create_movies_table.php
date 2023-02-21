@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('studio');
             $table->text('description');
             $table->string('slug');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->unsignedInteger('director_id');
+            $table->foreign('director_id')->references('id')->on('directors')->cascadeOnDelete();
             $table->timestamps();
         });
     }
