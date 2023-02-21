@@ -12,4 +12,9 @@ class Movie extends Model
     protected $table = 'movies';
 
     protected $fillable = ['name', 'description', 'studio', 'slug'];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

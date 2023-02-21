@@ -15,7 +15,6 @@
             cursor: pointer;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
 
 @section('content')
@@ -54,7 +53,7 @@
                                                 <div class="col-md-6 mb-2"><small><i class="fa-solid fa-droplet"></i><span> Model</span></small></div>
                                             </div>
                                             <div class="text-center">
-                                                <a href="#"
+                                                <a href="/movies/{{ $movie->slug }}"
                                                    style="padding: 10px 74px 10px 74px"
                                                    class="btn btn-block btn-primary">
                                                     See Details

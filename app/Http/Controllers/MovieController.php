@@ -15,7 +15,9 @@ class MovieController extends Controller
     public function index(): Response
     {
         $movies = Movie::all();
-        return response(view('movies', compact('movies')));
+        return response(view('movies', [
+            'movies' => $movies
+        ]));
     }
 
     /**
@@ -39,7 +41,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie): Response
     {
-        //
+        return response(view('movies.show', compact('movie')));
     }
 
     /**
