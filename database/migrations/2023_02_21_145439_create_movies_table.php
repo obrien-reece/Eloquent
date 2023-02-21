@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('movies', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('studio');
+            $table->longText('description');
             $table->timestamps();
         });
     }
