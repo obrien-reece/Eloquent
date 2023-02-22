@@ -13,6 +13,10 @@ class Movie extends Model
 
     protected $fillable = ['name', 'description', 'studio', 'slug'];
 
+    public function director() {
+        return $this->belongsTo(Director::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

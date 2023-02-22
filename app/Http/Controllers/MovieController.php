@@ -39,9 +39,11 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Movie $movie): Response
+    public function show(Movie $movie)
     {
-        return response(view('movies.show', compact('movie')));
+        return view('movies.show', [
+            'movie' => $movie->load('director')
+        ]);
     }
 
     /**

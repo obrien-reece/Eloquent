@@ -9,5 +9,13 @@ class Director extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
 
+    protected $table = 'directors';
+
+    public $timestamps = false;
+
+    public function movies() {
+        return $this->hasMany(Movie::class);
+    }
 }

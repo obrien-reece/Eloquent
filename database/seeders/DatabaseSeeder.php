@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Director;
 use App\Models\Movie;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Movie::factory(10)->create();
+
+        $director = Director::factory()->create([
+            'name' => 'Christopher Nolan'
+        ]);
+
+        Movie::factory(10)->create([
+            'director_id' => $director
+        ]);
     }
 }
