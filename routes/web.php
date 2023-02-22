@@ -23,5 +23,5 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::resource('movies', MoviesController::class);
-    Route::get('/director/{$director:slug}', [DirectorsController::class, 'show']);
+    Route::get('/director/{director:slug}', [DirectorsController::class, 'show']);
 });
