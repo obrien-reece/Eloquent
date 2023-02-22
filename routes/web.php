@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\MovieController;
+use App\Http\Controllers\DirectorsController;
+use App\Http\Controllers\MoviesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::resource('movies', MovieController::class);
+    Route::resource('movies', MoviesController::class);
+    Route::get('/director/{$director:slug}', [DirectorsController::class, 'show']);
 });
