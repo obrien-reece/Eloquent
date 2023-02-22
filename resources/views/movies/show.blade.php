@@ -22,9 +22,18 @@
 
         {{--Component to show the moviwe top navigation bar for Movie Display, Director and movie itself--}}
         <x-movie.show-movie-header :movie="$movie" >
-                <a style="font-size: 17px;" class="show-links" href="/director/{{ $movie->director->slug }}">{{ $movie->director->name }}</a>
-                <i class="fa-solid fa-chevron-right"></i>
-                <span style="font-size: 17px;" class="{{ request()->is('movies/*') ? 'text-muted' : '' }}">{{ $movie->name }}</span>
+            <a
+                style="font-size: 17px;"
+                class="show-links"
+                href="/director/{{ $movie->director->slug }}">
+                {{ $movie->director->name }}
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span
+                style="font-size: 17px;"
+                class="{{ request()->is('movies/*') ? 'text-muted' : '' }}">
+                {{ $movie->name }}
+            </span>
         </x-movie.show-movie-header>
 
         <div class="row">
@@ -45,24 +54,13 @@
                 {{--Bottom movie right card component--}}
                 <x-movie.show-movie-bottom-right-card />
 
-                <div class="mt-4" style="background-color: whitesmoke;padding: 2px 10px 2px 10px;border-radius: 4px">
-                    <strong><span>Disclaimer</span></strong>
-                    <ul>
-                        <li><span>The price shown is not binding</span></li>
-                        <li>
-                            <span>
-                                The box office price specifications may not be the exact data for
-                                the actual movie being displayed here. It
-                                may vary slightly. We recommend that you always check
-                                the details with updated online sources.
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+                {{--Movie pricing disclaimer component--}}
+                <x-movie.show-movie-bottom-right-card-disclaimer />
 
             </div>
         </div>
 
     </div>
 @endsection
+
 
