@@ -28,60 +28,41 @@
         </x-movie.show-movie-header>
 
         <div class="row">
-            <div class="col-md-8">
-                <div>
-                    <img src="{{ URL('images/banner.jpg') }}" style="border-radius: 5px" width="100%" alt="Banner Image">
-                </div>
+            <div class="col-md-8 mb-4">
+
+                {{--Entire Left page column--}}
+               <x-movie.show-movie-left-div :movie="$movie" />
+
             </div>
             <div class="col-md-4">
-                <div style="background-color: antiquewhite;padding: 24px;border-radius: 4px">
-                    <div class="border-bottom">
-                        <small><span>Posted {{ $movie->created_at->diffForHumans() }}</span></small>
-                        <br>
-                        <strong><span class="card-title" style="font-size: 23px">{{ $movie->name }}</span></strong>
-                    </div>
 
-                    <div class="mt-4 border-bottom">
-                        <small><span>Director(Executive Director)</span></small>
-                        <div>
-                            <span style="font-size: 18px">Christopher Nolan</span><br>
-                        </div>
-                        <div class="mt-3">
-                            <i class="fa-solid fa-xl fa-envelope"></i>
-                            <i class="fa-brands fa-xl fa-fw fa-telegram"></i>
-                            <i class="fa-brands fa-xl fa-square-facebook"></i>
-                        </div>
-                    </div>
-                    <div class="mt-3">
-                        <span>Rate the movie</span>
-                    </div>
+                {{--Upper movie right card component--}}
+                <x-movie.show-movie-upper-right-card :movie="$movie" />
 
+                {{--Middle movie right card component--}}
+                <x-movie.show-movie-middle-right-card :movie="$movie" />
+
+                {{--Bottom movie right card component--}}
+                <x-movie.show-movie-bottom-right-card />
+
+                <div class="mt-4" style="background-color: whitesmoke;padding: 2px 10px 2px 10px;border-radius: 4px">
+                    <strong><span>Disclaimer</span></strong>
+                    <ul>
+                        <li><span>The price shown is not binding</span></li>
+                        <li>
+                            <span>
+                                The box office price specifications may not be the exact data for
+                                the actual movie being displayed here. It
+                                may vary slightly. We recommend that you always check
+                                the details with updated online sources.
+                            </span>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-md-8">
-                <div style="background-color: #e5e7eb;border-radius: 4px;padding: 22px">
-                    {{--<div class="row">
-                        <div class="col-md-4">
-                            <strong>Standout Actors</strong>
-                            <ul>
-                                <li>LeoNardo Di'Caprio</li>
-                                <li>Tanasha Dona</li>
-                                <li>Tiffany Haddish</li>
-                                <li>ElChapo junior</li>
-                                <li>Lewandoski Junior</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">test</div>
-                        <div class="col-md-4">test</div>
-                    </div>--}}
-                    <span>{{ }}</span>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
     </div>
 @endsection
 
