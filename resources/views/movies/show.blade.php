@@ -22,8 +22,9 @@
 
         {{--Component to show the moviwe top navigation bar for Movie Display, Director and movie itself--}}
         <x-movie.show-movie-header :movie="$movie" >
-                <a class="show-links" href="/director/{{ $movie->director->slug }}">{{ $movie->director->name }}</a> >
-                <span class="{{ request()->is('movies/*') ? 'text-muted' : '' }}">{{ $movie->name }}</span>
+                <a style="font-size: 17px;" class="show-links" href="/director/{{ $movie->director->slug }}">{{ $movie->director->name }}</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span style="font-size: 17px;" class="{{ request()->is('movies/*') ? 'text-muted' : '' }}">{{ $movie->name }}</span>
         </x-movie.show-movie-header>
 
         <div class="row">
@@ -62,13 +63,21 @@
         <div class="row mt-4">
             <div class="col-md-8">
                 <div style="background-color: #e5e7eb;border-radius: 4px;padding: 22px">
-                    <div class="row">
+                    {{--<div class="row">
                         <div class="col-md-4">
                             <strong>Standout Actors</strong>
+                            <ul>
+                                <li>LeoNardo Di'Caprio</li>
+                                <li>Tanasha Dona</li>
+                                <li>Tiffany Haddish</li>
+                                <li>ElChapo junior</li>
+                                <li>Lewandoski Junior</li>
+                            </ul>
                         </div>
                         <div class="col-md-4">test</div>
                         <div class="col-md-4">test</div>
-                    </div>
+                    </div>--}}
+                    <span>{{ }}</span>
                 </div>
             </div>
             <div class="col-md-4"></div>

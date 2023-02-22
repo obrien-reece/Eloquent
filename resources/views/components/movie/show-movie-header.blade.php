@@ -1,7 +1,8 @@
 
 <div class="mt-2 mb-3">
-    <span style="font-size: 17px;">
-        <a class="show-links" href="/">Movies on display</a> >
+    <span>
+        <a style="font-size: 20px;" class="show-links" href="/">Movies on display</a>
+        <i class="fa-solid fa-chevron-right"></i>
         {{ $slot }}
     </span>
 </div>
