@@ -24,7 +24,6 @@
     @include('partials._maincontent')
 </div>
 
-@include('partials._footer')
 <!-- Scripts -->
 @stack('scripts')
 </body>
