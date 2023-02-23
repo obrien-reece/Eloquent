@@ -21,4 +21,5 @@ class Movie extends Model
     {
         return 'slug';
     }
+
 }

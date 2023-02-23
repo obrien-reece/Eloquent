@@ -14,9 +14,9 @@ class MoviesController extends Controller
      */
     public function index(): Response
     {
-        $movies = Movie::all();
+        $movies = Movie::paginate(12);
         return response(view('movies', [
-            'movies' => $movies
+            'movies' => $movies->load('director')
         ]));
     }
 

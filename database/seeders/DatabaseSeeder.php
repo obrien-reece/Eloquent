@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Christopher Nolan'
         ]);
 
-        Movie::factory(10)->create([
-            'director_id' => $director
+        Movie::factory(30)->create([
+            'director_id' => $director,
+            'studio' => 'Universal Pictures'
         ]);
     }
 }

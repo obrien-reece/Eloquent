@@ -7,6 +7,7 @@
 
         {{--Component to show the movie top navigation bar for Movie Display, Director and movie itself--}}
         <x-movie.show-movie-header :movie="$movie" >
+            <i class="fa-solid fa-chevron-right chevron"></i>
             <a
                 style="font-size: 17px;"
                 class="show-links"
