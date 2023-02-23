@@ -10,7 +10,7 @@ class DirectorsController extends Controller
     public function show(Director $director)
     {
         return view('directors.show-director', [
-            'director' => $director
+            'author' => $director
         ]);
     }
 }
