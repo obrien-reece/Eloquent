@@ -12,10 +12,9 @@ class ShowMovieHeader extends Component
      * Create a new component instance.
      */
 
-    public $movie;
-    public function __construct($movie)
+    public function __construct()
     {
-        $this->movie = $movie;
+
     }
 
     /**

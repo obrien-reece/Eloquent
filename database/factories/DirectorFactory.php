@@ -18,7 +18,9 @@ class DirectorFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->name,
-            'slug' => $this->faker->unique()->slug
+            'slug' => $this->faker->unique()->slug,
+            'age' => $this->faker->numberBetween(30, 56),
+            'about' => $this->faker->paragraph
         ];
     }
 }

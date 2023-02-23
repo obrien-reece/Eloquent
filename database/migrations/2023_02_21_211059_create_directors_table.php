@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('directors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('age')->nullable();
+            $table->text('about');
             $table->string('name');
 //            $table->timestamps();
         });

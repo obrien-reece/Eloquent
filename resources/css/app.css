@@ -1,0 +1,17 @@
+.app_name:hover {
+    color: red;
+}
+span {
+    font-family: 'Luxurious Roman', cursive;
+}
+.chevron {
+    margin-right: 10px;
+}
+.show-links {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+.show-links:hover {
+    color: lightsalmon;
+}

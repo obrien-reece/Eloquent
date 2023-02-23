@@ -9,6 +9,8 @@ class DirectorsController extends Controller
 {
     public function show(Director $director)
     {
-        dd($director);
+        return view('directors.show-director', [
+            'director' => $director
+        ]);
     }
 }

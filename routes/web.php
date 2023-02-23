@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DirectorsController;
 use App\Http\Controllers\MoviesController;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('movies');
-});
+Route::middleware('auth')->get('/', function () {
+    return view('movies', [
+        'movies' => Movie::all()
+    ]);
+})->name('home');
 
 Auth::routes();
 

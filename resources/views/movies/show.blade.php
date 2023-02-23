@@ -2,25 +2,10 @@
 
 @section('title', 'Movie'. ' - ' . $movie->name)
 
-@push('styles')
-    <style>
-        i {
-            margin-right: 10px;
-        }
-        .show-links {
-            text-decoration: none;
-            color: black
-        }
-        .show-links:hover {
-            color: lightsalmon;
-        }
-    </style>
-@endpush
-
 @section('content')
     <div class="container">
 
-        {{--Component to show the moviwe top navigation bar for Movie Display, Director and movie itself--}}
+        {{--Component to show the movie top navigation bar for Movie Display, Director and movie itself--}}
         <x-movie.show-movie-header :movie="$movie" >
             <a
                 style="font-size: 17px;"
@@ -31,7 +16,7 @@
             <i class="fa-solid fa-chevron-right"></i>
             <span
                 style="font-size: 17px;"
-                class="{{ request()->is('movies/*') ? 'text-muted' : '' }}">
+                class="{{ url()->current() ? 'text-muted' : '' }}">
                 {{ $movie->name }}
             </span>
         </x-movie.show-movie-header>
