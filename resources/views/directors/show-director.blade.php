@@ -27,20 +27,14 @@
         </x-movie.show-movie-header>
 
         <div class="row">
-            <div class="col-md-2">
-                <img src="/images/banner.jpg" style="border-radius: 5px" width="100%" alt="Director's image">
+            <div class="col-md-2 border-start border-top border-bottom">
+                <img class="mt-2" src="/images/banner.jpg" style="border-radius: 5px" width="100%" alt="Director's image">
                 <div class="mt-2">
                     <span>Name: {{ $director->name }} </span>
                     <br>
-                    <span>Age: 20</span>
+                    <span>Age: {{ $director->age }}</span>
                     <div style="text-align: justify;">
-                        <span>
-                        <small>Christopher Nolan is best known for the
-                        Batman Trilogy which he directed between
-                        2005 and 2012 with his best one being The
-                        Dark Knight Rises
-                        </small>
-                    </span>
+                        <span><small> {{ $director->about }} </small></span>
                     </div>
                 </div>
             </div>
