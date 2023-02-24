@@ -7,13 +7,10 @@
         <div class="row">
             <div class="col-md-12 m-auto">
                 <div class="banner">
-                    <x-home.jumbotron-header />
-                    <br>
-                    <div class="text-center">
-                        <span class="display-6" style="font-family: 'Luxurious Roman', cursive;">
-                            MOVIES ON DISPLAY
-                        </span>
-                    </div>
+                    <x-home.jumbotron-header>
+                        MOVIES ON DISPLAY
+                    </x-home.jumbotron-header>
+
                     <br><br>
                     <div class="row">
                         @foreach($movies as $movie)

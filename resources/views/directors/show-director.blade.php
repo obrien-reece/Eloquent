@@ -9,6 +9,10 @@
 @section('content')
 
     <div class="container">
+        <x-home.jumbotron-header>
+            MOVIES BY {{ $author->name }}
+            <hr>
+        </x-home.jumbotron-header>
 
         {{--Component to show the movie top navigation bar for Movie Display, Director and movie itself--}}
         <x-movie.show-movie-header>

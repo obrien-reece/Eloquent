@@ -18,7 +18,7 @@ class Movie extends Model
     }
 
     public function actors() {
-        return $this->hasMany(Movie::class);
+        return $this->hasMany(Actor::class);
     }
 
     public function getRouteKeyName()

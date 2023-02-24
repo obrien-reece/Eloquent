@@ -34,8 +34,17 @@
                 {{--Upper movie right card component--}}
                 <x-movie.show-movie-upper-right-card :movie="$movie" />
 
-                {{--Middle movie right card component--}}
-                <x-movie.show-movie-middle-right-card :movie="$movie" />
+                {{--Middle movie right card--}}
+                    <div class="mt-4" style="background-color: white;padding: 24px;border-radius: 4px">
+                        <strong><span>Breakthrough Actors</span></strong>
+                        <ul>
+                            @foreach($movie->actors as $actor)
+                                <a style="text-decoration: none;color: black" href="#">
+                                    <li>{{ $actor->name }}</li>
+                                </a>
+                            @endforeach
+                        </ul>
+                    </div>
 
                 {{--Bottom movie right card component--}}
                 <x-movie.show-movie-bottom-right-card />
