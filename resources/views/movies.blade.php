@@ -24,5 +24,5 @@
             </div>
         </div>
     </div>
-    {{ $movies->links() }}
+{{--    {{ $movies->links() }}--}}
 @endsection

@@ -17,6 +17,10 @@ class Movie extends Model
         return $this->belongsTo(Director::class);
     }
 
+    public function actors() {
+        return $this->hasMany(Movie::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

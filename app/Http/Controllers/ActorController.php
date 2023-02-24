@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
+use App\Models\Actor;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class MoviesController extends Controller
+class ActorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): Response
     {
-        $movies = Movie::all();
-        return response(view('movies', [
-            'movies' => $movies->load('director')
-        ]));
+        //
     }
 
     /**
@@ -39,17 +36,15 @@ class MoviesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Movie $movie)
+    public function show(Actor $actor): Response
     {
-        return view('movies.show', [
-            'movie' => $movie->load('director')
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Movie $movie): Response
+    public function edit(Actor $actor): Response
     {
         //
     }
@@ -57,7 +52,7 @@ class MoviesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Movie $movie): RedirectResponse
+    public function update(Request $request, Actor $actor): RedirectResponse
     {
         //
     }
@@ -65,7 +60,7 @@ class MoviesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Movie $movie): RedirectResponse
+    public function destroy(Actor $actor): RedirectResponse
     {
         //
     }

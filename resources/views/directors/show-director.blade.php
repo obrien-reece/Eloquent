@@ -39,7 +39,6 @@
                     <x-movie.movie-card :movie="$movie" />
                 @endforeach
         </div>
-
     </div>
 
 @endsection
