@@ -14,9 +14,9 @@ class MoviesController extends Controller
      */
     public function index(): Response
     {
-        $movies = Movie::all();
+        $movies = Movie::latest()->with('director')->search(request(['search']))->get();
         return response(view('movies', [
-            'movies' => $movies->load('director')
+            'movies' => $movies
         ]));
     }
 
