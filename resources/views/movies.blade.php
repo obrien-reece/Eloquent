@@ -13,9 +13,13 @@
 
                     <br><br>
                     <div class="row">
-                        @foreach($movies as $movie)
+                        @forelse($movies as $movie)
                             <x-movie.movie-card :movie="$movie" />
-                        @endforeach
+                        @empty
+                            <div class="text-center">
+                                <span style="font-size: 20px">No movies found from the search parameter specified</span>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>

@@ -22,8 +22,7 @@
                     <form action="/movies" method="GET">
                         <div class="form-group">
                             <label for=""><small>Search for movie studio, name, actor, description</small></label>
-                            <input type="text" name="search" class="form-control mb-2" placeholder="Search for..."></input>
-                            <button type="submit" name="searchbtn" class="btn btn-dark btn-block">Search from countless movies</button>
+                            <input type="text" name="search" class="form-control mb-2" placeholder="Search for...">
                         </div>
                     </form>
                 </div>
