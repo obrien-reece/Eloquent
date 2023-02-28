@@ -9,6 +9,9 @@
                 <div class="banner">
                     <x-home.jumbotron-header>
                         MOVIES ON DISPLAY
+                        <x-slot:trigger>
+                            <form action="/movies" method="GET">
+                        </x-slot:trigger>
                     </x-home.jumbotron-header>
 
                     <br><br>

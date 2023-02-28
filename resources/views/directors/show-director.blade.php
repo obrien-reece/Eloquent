@@ -2,15 +2,14 @@
 
 @section('title', $author->name )
 
-@push('styles')
-
-@endpush
-
 @section('content')
 
     <div class="container">
         <x-home.jumbotron-header>
             MOVIES BY {{ $author->name }}
+            <x-slot:trigger>
+                <form action="{{url()->current()}}/" method="GET">
+            </x-slot:trigger>
             <hr>
         </x-home.jumbotron-header>
 
