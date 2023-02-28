@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3>Find the movie you are looking for <u>without any hustle</u></h3>
-                    <form action="#" method="GET">
+                    <form action="/movies" method="GET">
                         <div class="form-group">
                             <label for=""><small>Search for movie studio, name, actor, description</small></label>
                             <input type="text" name="search" class="form-control mb-2" placeholder="Search for..."></input>
