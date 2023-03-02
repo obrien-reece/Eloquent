@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DirectorsController;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\PagesController;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 
@@ -16,17 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth')->get('/', function () {
-    return view('movies', [
-        'movies' => Movie::all()
-    ]);
-})->name('home');
-
 Auth::routes();
 
 Route::get('/', [MoviesController::class, 'index'])->middleware('auth');
 
-Route::middleware('auth')->group(function () {
-    Route::resource('movies', MoviesController::class);
-    Route::get('/director/{director:slug}', [DirectorsController::class, 'show']);
-});
+Route::resource('movies', MoviesController::class)->middleware('auth');
+
+Route::get('/director/{director:slug}', [DirectorsController::class, 'show'])->middleware('auth');
+
+Route::get('/{page}',PagesController::class)->where('page', 'about|contact');
+

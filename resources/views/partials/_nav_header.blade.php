@@ -16,6 +16,15 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">{{ __('About') }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">{{ __('Contact us') }}</a>
+                </li>
+
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
