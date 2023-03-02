@@ -23,6 +23,7 @@
                                 <span style="font-size: 20px">No movies found from the search parameter specified</span>
                             </div>
                         @endforelse
+                        {{ $movies->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>

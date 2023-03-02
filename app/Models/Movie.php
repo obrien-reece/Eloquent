@@ -9,6 +9,8 @@ class Movie extends Model
 {
     use HasFactory;
 
+    protected $with = ['director'];
+
     public function scopeSearch($query, array $filters) {
         $query->when($filters['search'] ?? false, function ($query, $search) {
            $query->where(function ($query) {
