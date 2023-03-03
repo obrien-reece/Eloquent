@@ -9,7 +9,7 @@ class Movies_Actors extends Model
 {
     use HasFactory;
 
-    protected $table = 'movie_actor';
+    protected $table = 'actor_movie';
 
     public $timestamps = false;
 
