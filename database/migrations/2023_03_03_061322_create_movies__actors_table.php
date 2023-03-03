@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('actors', function (Blueprint $table) {
-            $table->unsignedInteger('movie_id')->after('id');
-            $table->foreign('movie_id')->references('id')->on('movies')->cascadeOnDelete();
+        Schema::create('movies__actors', function (Blueprint $table) {
+            $table->foreignId('actor_id')->constrained('actors');
+            $table->foreignId('movie_id')->constrained('movies');
         });
     }
 
@@ -22,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('actors', function (Blueprint $table) {
-            $table->dropForeign(['movie_id']);
-        });
+        Schema::dropIfExists('movies__actors');
     }
 };

@@ -45,7 +45,7 @@ class Movie extends Model
         return $this->belongsTo(Director::class);
     }
 
-    public function actors() {
+    public function actor() {
         return $this->hasMany(Actor::class);
     }
 

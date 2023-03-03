@@ -38,7 +38,7 @@
                     <div class="mt-4" style="background-color: white;padding: 24px;border-radius: 4px">
                         <strong><span>Breakthrough Actors</span></strong>
                         <ul>
-                            @foreach($movie->actors as $actor)
+                            @foreach($movie->actor as $actor)
                                 <a style="text-decoration: none;color: black" href="#">
                                     <li>{{ $actor->name }}</li>
                                 </a>
