@@ -12,9 +12,9 @@ class AdminController extends Controller
         return view('admin.index', compact('movies'));
     }
 
-    public function show(Movie $movie) {
+    public function show(Movie $admin) {
         return view('movies.show', [
-            'movie' => $movie->load(['actor'])
+            'movie' => $admin->load(['actor'])
         ]);
     }
 
@@ -22,8 +22,10 @@ class AdminController extends Controller
         dd("hai");
     }
 
-    public function edit(Movie $movie) {
+    public function edit(Movie $admin) {
 
-        return view('admin.edit', compact('movie'));
+        return view('admin.edit', [
+            'movie' => $admin
+        ]);
     }
 }
