@@ -31,7 +31,15 @@ class Movie extends Model
 
     protected $table = 'movies';
 
-    protected $fillable = ['name', 'description', 'studio', 'slug'];
+    protected $fillable = [
+                            'name',
+                            'description',
+                            'studio',
+                            'slug',
+                            'domestic_box_office',
+                            'international_box_office',
+                            'worldwide_box_office'
+                          ];
 
     public function director() {
         return $this->belongsTo(Director::class);

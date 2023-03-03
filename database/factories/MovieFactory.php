@@ -23,6 +23,9 @@ class MovieFactory extends Factory
             'studio' => $this->faker->text(10),
             'description' => collect($this->faker->paragraphs(6))->map(fn($item) => "<p>{$item}</p>")->implode(''),
             'slug' => $this->faker->unique()->slug,
+            'domestic_box_office' => $this->faker->numberBetween(100000000, 300000000),
+            'international_box_office' => $this->faker->numberBetween(100000000, 300000000),
+            'worldwide_box_office' => $this->faker->numberBetween(100000000, 300000000),
 //            'image' => $this->faker->image
         ];
     }

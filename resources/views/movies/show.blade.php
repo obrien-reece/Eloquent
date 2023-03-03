@@ -47,7 +47,7 @@
                     </div>
 
                 {{--Bottom movie right card component--}}
-                <x-movie.show-movie-bottom-right-card />
+                <x-movie.show-movie-bottom-right-card :movie="$movie" />
 
                 {{--Movie pricing disclaimer component--}}
                 <x-movie.show-movie-bottom-right-card-disclaimer />
