@@ -26,6 +26,7 @@ Route::middleware('can:admin')->group(function () {
     Route::get('/admin/create', [AdminController::class, 'create'])->name('create');
     Route::get('/admin/{admin:slug}/edit', [AdminController::class, 'edit']);
     Route::get('/admin/{admin:slug}', [AdminController::class, 'show']);
+    Route::put('/admin/{admin}', [AdminController::class, 'update']);
 });
 
 Route::middleware('auth')->group(function () {

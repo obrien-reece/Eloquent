@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateAdminEditRequest;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,19 @@ class AdminController extends Controller
         ]);
     }
 
-    public function create() {
-        dd("hai");
-    }
-
     public function edit(Movie $admin) {
 
         return view('admin.edit', [
             'movie' => $admin
         ]);
     }
+
+    public function update(ValidateAdminEditRequest $request, $id) {
+
+    }
+
+    public function create() {
+        dd("hai");
+    }
+
 }
