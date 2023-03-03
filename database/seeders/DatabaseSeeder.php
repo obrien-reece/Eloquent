@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Actor;
 use App\Models\Director;
 use App\Models\Movie;
+use App\Models\Movies_Actors;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
 
-        Actor::factory(7)->create();
+        Movies_Actors::factory(7)->create();
 
     }
 }
