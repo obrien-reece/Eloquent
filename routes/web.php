@@ -21,11 +21,16 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //Admin
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware('can:admin');
+Route::middleware('can:admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index']);
+    Route::get('/admin/{movie}', [AdminController::class, 'show']);
+});
 
-Route::get('/', [MoviesController::class, 'index'])->middleware('auth');
-Route::get('/movies', [MoviesController::class, 'index'])->middleware('auth');
-Route::get('/movies/{movie}', [MoviesController::class, 'show']);
+Route::middleware('auth')->group(function () {
+    Route::get('/', [MoviesController::class, 'index']);
+    Route::get('/movies', [MoviesController::class, 'index']);
+    Route::get('/movies/{movie}', [MoviesController::class, 'show']);
+});
 
 Route::get('/director/{director:slug}', [DirectorsController::class, 'show'])->middleware('auth');
 

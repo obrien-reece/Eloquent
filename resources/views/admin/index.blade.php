@@ -19,6 +19,9 @@
                         <span>{{ $movie->name }}</span> -
                         <span>{!! Str::of(\Stevebauman\Purify\Facades\Purify::clean($movie->description))->limit(80) !!}</span>
                         <span style="float: right">
+                            <a style="text-decoration: none;color: blue;padding-right: 17px" href="/admin/{{ $movie->slug }}">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
                             <a style="text-decoration: none;color: green;padding-right: 17px" href="">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
