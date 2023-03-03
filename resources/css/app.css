@@ -34,3 +34,12 @@ span {
 .directors_image:hover {
     transform: scale(1.1);
 }
+
+.company {
+    cursor: pointer;
+}
+
+.company_name:hover {
+    color: red;
+    cursor: pointer;
+}

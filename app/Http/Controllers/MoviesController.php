@@ -6,6 +6,7 @@ use App\Models\Movie;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Gate;
 
 class MoviesController extends Controller
 {
@@ -14,6 +15,8 @@ class MoviesController extends Controller
      */
     public function index(): Response
     {
+//        ddd(Gate::allows('admin'));
+//        $this->authorize('admin');
         $movies = Movie::latest()->search(request(['search']))->paginate(12);
 
         return response(view('movies', [

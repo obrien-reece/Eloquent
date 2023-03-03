@@ -45,6 +45,21 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                            {{--Admin only links--}}
+                            @can('admin'))
+                                <a class="dropdown-item" href=""
+                                   onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                <a class="dropdown-item" href=""
+                                   onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                    {{ __('New Movie Post') }}
+                                </a>
+                            @endcan
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
