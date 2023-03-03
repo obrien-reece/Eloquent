@@ -44,7 +44,7 @@
                         Products
                     </h6>
                     <p>
-                        <a style="text-decoration: none" href="#" class="text-reset">Movies</a>
+                        <a style="text-decoration: none" href="/" class="text-reset">Movies</a>
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -56,16 +56,16 @@
                         Useful links
                     </h6>
                     <p>
-                        <a style="text-decoration: none" href="#" class="text-reset">About us</a>
+                        <a style="text-decoration: none" href="/about" class="text-reset">About us</a>
                     </p>
                     <p>
-                        <a style="text-decoration: none" href="#" class="text-reset">Contact us</a>
+                        <a style="text-decoration: none" href="/contact" class="text-reset">Contact us</a>
                     </p>
                     <p>
-                        <a style="text-decoration: none" href="#" class="text-reset">Register</a>
+                        <a style="text-decoration: none" href="/register" class="text-reset">Register</a>
                     </p>
                     <p>
-                        <a style="text-decoration: none" href="#" class="text-reset">Login</a>
+                        <a style="text-decoration: none" href="/login" class="text-reset">Login</a>
                     </p>
                 </div>
                 <!-- Grid column -->
