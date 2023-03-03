@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index() {
-        $movies = Movie::all();
+        $movies = Movie::paginate(20);
         return view('admin.index', compact('movies'));
     }
 }
