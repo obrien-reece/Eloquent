@@ -26,7 +26,7 @@
                     {{ $trigger }}
 
                         <div class="form-group">
-                            <label for=""><small>Search for movie studio, name, description</small></label>
+                            <label for=""><small>Search by director's name, movie's name, studio's name and movie description</small></label>
                             <input
                                 type="text"
                                 name="search"
