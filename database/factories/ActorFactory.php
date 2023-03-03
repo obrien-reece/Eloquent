@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Movie;
+use App\Models\Movies_Actors;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,7 @@ class ActorFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->name,
-            'movie_id' => Movie::factory(),
+//            'movie_id' => Movies_Actors::factory(),
             'slug' => $this->faker->unique()->slug,
             'age' => $this->faker->numberBetween(30, 56),
             'about' => $this->faker->paragraph
