@@ -8,7 +8,7 @@
     <div class="mt-4 border-bottom">
         <small><span>Director(Executive Director)</span></small>
         <div>
-            <span style="font-size: 18px">Christopher Nolan</span><br>
+            <span style="font-size: 18px">{{ $movie->director->name }}</span><br>
         </div>
         <div class="mt-3">
             <i class="fa-solid fa-xl fa-envelope"></i>

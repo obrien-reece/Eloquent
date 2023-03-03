@@ -43,7 +43,7 @@ class MoviesController extends Controller
     public function show(Movie $movie)
     {
         return view('movies.show', [
-            'movie' => $movie
+            'movie' => $movie->load('actor')
         ]);
     }
 
