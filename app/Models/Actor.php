@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Actor extends Model
 {
@@ -13,8 +14,9 @@ class Actor extends Model
 
     protected $fillable = ['name', 'age', 'about', 'movie_id'];
 
-    public function movies() {
-        return $this->hasMany(Movie::class);
+    public function movie(): BelongsToMany
+    {
+        return $this->belongsToMany(Movie::class);
     }
 
     public $timestamps = false;
