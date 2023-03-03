@@ -14,7 +14,16 @@ class AdminController extends Controller
 
     public function show(Movie $movie) {
         return view('movies.show', [
-            'movie' => $movie->load('actor')
+            'movie' => $movie->load(['actor'])
         ]);
+    }
+
+    public function create() {
+        dd("hai");
+    }
+
+    public function edit(Movie $movie) {
+
+        return view('admin.edit', compact('movie'));
     }
 }

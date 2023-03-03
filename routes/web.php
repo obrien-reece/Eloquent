@@ -23,7 +23,9 @@ Auth::routes();
 //Admin
 Route::middleware('can:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index']);
-    Route::get('/admin/{movie}', [AdminController::class, 'show']);
+    Route::get('/admin/{movie}/edit', [AdminController::class, 'edit']);
+    Route::get('/admin/create', [AdminController::class, 'create'])->name('create');
+    Route::get('/admin/{movie:slug}', [AdminController::class, 'show']);
 });
 
 Route::middleware('auth')->group(function () {
