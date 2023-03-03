@@ -12,21 +12,17 @@ class Movie extends Model
     protected $with = ['director'];
 
     public function scopeSearch($query, array $filters) {
+
         $query->when($filters['search'] ?? false, function ($query, $search) {
            $query->where(function ($query) {
                $query
                    ->where('name', 'like' ,'%' . request('search') . '%')
                    ->orWhere('description', 'like', '%' . request('search') . '%')
                    ->orWhere('studio', 'like', '%' . request('search') . '%');
+           })->orWhereHas('director', function ($query) {
+               $query->where('name', 'like', '%' . request('search') . '%');
            });
         });
-
-//        if ($filters['search'] ?? false) {
-//            $query
-//                ->where('name', 'like', '%' . request('search') . '%')
-//                ->orWhere('description', 'like', '%' . request('search') . '%')
-//                ->orWhere('studio', 'like', '%' . request('search') . '%');
-//        }
     }
 
     protected $table = 'movies';

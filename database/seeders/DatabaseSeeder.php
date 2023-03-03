@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
 
-        Movies_Actors::factory(7)->create();
+        Movies_Actors::factory(24)->create();
 
     }
 }
