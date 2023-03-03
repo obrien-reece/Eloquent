@@ -9,9 +9,20 @@
                 <div class="banner">
                     <x-home.jumbotron-header>
                         MOVIES ON DISPLAY
+
                         <x-slot:trigger>
                             <form action="/movies" method="GET">
+                                <div class="form-group">
+                                    <label for=""><small>Search by director's name, movie's name, studio's name and movie description</small></label>
+                                    <input
+                                        type="text"
+                                        name="search"
+                                        class="form-control mb-2"
+                                        placeholder="Search for...">
+                                </div>
+                            </form>
                         </x-slot:trigger>
+
                     </x-home.jumbotron-header>
 
                     <br><br>

@@ -25,15 +25,6 @@
 
                     {{ $trigger }}
 
-                        <div class="form-group">
-                            <label for=""><small>Search by director's name, movie's name, studio's name and movie description</small></label>
-                            <input
-                                type="text"
-                                name="search"
-                                class="form-control mb-2"
-                                placeholder="Search for...">
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

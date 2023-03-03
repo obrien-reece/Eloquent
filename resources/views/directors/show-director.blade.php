@@ -7,9 +7,22 @@
     <div class="container">
         <x-home.jumbotron-header>
             MOVIES BY {{ $author->name }}
+
             <x-slot:trigger>
-                <form action="{{url()->current()}}/" method="GET">
+                <form action="{{url()->current()}}" method="GET">
+                    <div class="form-group">
+                        <label for=""><small>Search by director's name, movie's name, studio's name and movie description</small></label>
+                        {{--TODO--}}
+                        <input
+                            type="text"
+                            readonly
+                            name="search"
+                            class="form-control mb-2"
+                            placeholder="Currently not available">
+                    </div>
+                </form>
             </x-slot:trigger>
+
             <hr>
         </x-home.jumbotron-header>
 
