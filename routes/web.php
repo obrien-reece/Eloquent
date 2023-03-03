@@ -20,8 +20,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [MoviesController::class, 'index'])->middleware('auth');
+Route::get('/movies', [MoviesController::class, 'index'])->middleware('auth');
+Route::get('/movies/{movie}', [MoviesController::class, 'show']);
 
-Route::resource('movies', MoviesController::class)->middleware('auth');
 
 Route::get('/director/{director:slug}', [DirectorsController::class, 'show'])->middleware('auth');
 
