@@ -36,16 +36,10 @@ class AdminController extends Controller
 
         $movie = Movie::findOrFail($id);
 
-        //Movies Image
-        $movie_image_path = $request->file('movie_thumbnail')->storeAs(
-            'public/movie_thumbnails',
-            Str::of($movie->name)->snake() . '.' . $request->movie_thumbnail->extension()
-        );
-
         $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
 
         //Start a DB transaction
-        DB::transaction(function () use($movie, $request, $movie_image_path, $worldwide_box_office) {
+        DB::transaction(function () use($movie, $request, $worldwide_box_office) {
             $movie->name = $request->input('movie_name');
             $movie->studio = $request->input('movie_studio');
             $movie->description = $request->input('movie_description');
@@ -55,6 +49,13 @@ class AdminController extends Controller
             $movie->worldwide_box_office = $worldwide_box_office;
 
             if($request->hasFile('movie_thumbnail')) {
+
+                //Movies Image
+                $movie_image_path = $request->file('movie_thumbnail')->storeAs(
+                    'public/movie_thumbnails',
+                    Str::of($movie->name)->snake() . '.' . $request->movie_thumbnail->extension()
+                );
+
                 if(File::exists($movie_image_path)) {
                     File::delete($movie_image_path);
                 }
@@ -70,13 +71,15 @@ class AdminController extends Controller
             $director->name = $request->input('director_name');
             $director->slug = Str::of($request->input('director_name'))->slug('-');
 
-            //Directors Image
-            $director_image_path = $request->file('director_image')->storeAs(
-                'public/director_image_thumbnails',
-                Str::of($movie->director->name)->snake() . '.' . $request->director_image->extension()
-            );
 
             if($request->hasFile('director_image')) {
+
+                //Directors Image
+                $director_image_path = $request->file('director_image')->storeAs(
+                    'public/director_image_thumbnails',
+                    Str::of($movie->director->name)->snake() . '.' . $request->director_image->extension()
+                );
+
                 if(File::exists($director_image_path)) {
                     File::delete($director_image_path);
                 }

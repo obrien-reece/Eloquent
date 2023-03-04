@@ -43,7 +43,7 @@
                             labelName="Movie Description">
 
                             @error('movie_description')
-{{--                            <span style="color: red">{{ $message }}</span>--}}
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
 
                         </x-form.text-area>
@@ -80,18 +80,6 @@
                             name="movie_international_box_office">
 
                             @error('movie_international_box_office')
-                            <span style="color: red">{{ $message }}</span>
-                            @enderror
-
-                        </x-form.input>
-
-                        <x-form.input
-                            labelName="WorldWide Box Office Revenue"
-                            value="{{ $movie->worldwide_box_office }}"
-                            placeholder="Input worldwide box office generated revenue"
-                            name="movie_worldwide_box_office">
-
-                            @error('movie_worldwide_box_office')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
 
