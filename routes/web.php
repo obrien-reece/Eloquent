@@ -27,6 +27,7 @@ Route::middleware('can:admin')->group(function () {
     Route::get('/admin/{admin:slug}/edit', [AdminController::class, 'edit']);
     Route::get('/admin/{admin:slug}', [AdminController::class, 'show']);
     Route::put('/admin/{admin}', [AdminController::class, 'update']);
+    Route::post('/admin', [AdminController::class, 'store']);
 });
 
 Route::middleware('auth')->group(function () {

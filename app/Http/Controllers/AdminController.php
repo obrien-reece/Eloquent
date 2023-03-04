@@ -42,12 +42,17 @@ class AdminController extends Controller
             Str::of($movie->name)->snake() . '.' . $request->movie_thumbnail->extension()
         );
 
+        $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
+
         //Start a DB transaction
-        DB::transaction(function () use($movie, $request, $movie_image_path) {
+        DB::transaction(function () use($movie, $request, $movie_image_path, $worldwide_box_office) {
             $movie->name = $request->input('movie_name');
             $movie->studio = $request->input('movie_studio');
             $movie->description = $request->input('movie_description');
             $movie->slug = Str::of($request->input('movie_name'))->slug('-');
+            $movie->domestic_box_office = $request->input('movie_domestic_box_office');
+            $movie->international_box_office = $request->input('movie_international_box_office');
+            $movie->worldwide_box_office = $worldwide_box_office;
 
             if($request->hasFile('movie_thumbnail')) {
                 if(File::exists($movie_image_path)) {
@@ -88,7 +93,11 @@ class AdminController extends Controller
     }
 
     public function create() {
-        dd("hai");
+        return view('admin.create');
+    }
+
+    public function store() {
+        dd('catchy litte jingle');
     }
 
 }
