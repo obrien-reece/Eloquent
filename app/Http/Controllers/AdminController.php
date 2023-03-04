@@ -106,22 +106,14 @@ class AdminController extends Controller
 
         $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
 
-        if($request->hasFile('movie_thumbnail')) {
 
+        //Start a DB transaction
+        DB::transaction(function () use($request, $worldwide_box_office) {
             //Movies Image
             $movie_image_path = $request->file('movie_thumbnail')->storeAs(
                 'public/movie_thumbnails',
                 Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
             );
-
-            if(File::exists($movie_image_path)) {
-                File::delete($movie_image_path);
-            }
-
-            $movie_image_thumbnail = $movie_image_path;
-        }
-
-        if($request->hasFile('director_image')) {
 
             //Directors Image
             $director_image_path = $request->file('director_image')->storeAs(
@@ -129,21 +121,12 @@ class AdminController extends Controller
                 Str::of($request->input('director_name'))->snake() . '.' . $request->director_image->extension()
             );
 
-            if(File::exists($director_image_path)) {
-                File::delete($director_image_path);
-            }
-
-            $director_image_thumbnail = $director_image_path;
-        }
-
-        //Start a DB transaction
-        DB::transaction(function () use($request, $worldwide_box_office, $movie_image_thumbnail, $director_image_thumbnail) {
             $director = Director::create([
                 'name' =>  $request->input('director_name'),
                 'age' => $request->input('director_age'),
                 'about' => $request->input('director_about'),
                 'slug' => Str::of($request->input('director_name'))->slug('-'),
-                'image' => $director_image_thumbnail,
+                'image' => $director_image_path,
             ]);
 
             $movie = Movie::create([
@@ -155,7 +138,7 @@ class AdminController extends Controller
                 'domestic_box_office' => $request->input('movie_domestic_box_office'),
                 'international_box_office' => $request->input('movie_international_box_office'),
                 'worldwide_box_office' => $worldwide_box_office,
-                'image' => $movie_image_thumbnail,
+                'image' => $movie_image_path,
             ]);
 
 

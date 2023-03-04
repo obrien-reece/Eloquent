@@ -9,7 +9,7 @@ class Director extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'age', 'slug', 'about'];
+    protected $fillable = ['name', 'age', 'image', 'slug', 'about'];
 
     protected $table = 'directors';
 
