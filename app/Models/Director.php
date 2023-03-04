@@ -15,17 +15,6 @@ class Director extends Model
 
     public $timestamps = false;
 
-/*    public function scopeDirected($query, array $filters) {
-
-        $query->when($filters['search'] ?? false, function ($query, $search) {
-            $query->whereHas('movies', function ($query) {
-                $query
-                    ->where('name', 'like' ,'%' . request('search') . '%')
-                    ->orWhere('description', 'like', '%' . request('search') . '%')
-                    ->orWhere('studio', 'like', '%' . request('search') . '%');
-            });
-        });
-    }*/
 
     public function movies() {
         return $this->hasMany(Movie::class);

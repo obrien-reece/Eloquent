@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 class AdminController extends Controller
 {
     public function index() {
-        $movies = Movie::paginate(20);
+        $movies = Movie::orderByDesc('id')->paginate(20);
         return view('admin.index', compact('movies'));
     }
 
@@ -106,21 +106,21 @@ class AdminController extends Controller
 
         $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
 
+        //Movies Image
+        $movie_image_path = $request->file('movie_thumbnail')->storeAs(
+            'public/movie_thumbnails',
+            Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
+        );
+
+        //Directors Image
+        $director_image_path = $request->file('director_image')->storeAs(
+            'public/director_image_thumbnails',
+            Str::of($request->input('director_name'))->snake() . '.' . $request->director_image->extension()
+        );
+
 
         //Start a DB transaction
-        DB::transaction(function () use($request, $worldwide_box_office) {
-            //Movies Image
-            $movie_image_path = $request->file('movie_thumbnail')->storeAs(
-                'public/movie_thumbnails',
-                Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
-            );
-
-            //Directors Image
-            $director_image_path = $request->file('director_image')->storeAs(
-                'public/director_image_thumbnails',
-                Str::of($request->input('director_name'))->snake() . '.' . $request->director_image->extension()
-            );
-
+        DB::transaction(function () use($request, $worldwide_box_office, $movie_image_path, $director_image_path) {
             $director = Director::create([
                 'name' =>  $request->input('director_name'),
                 'age' => $request->input('director_age'),
@@ -141,8 +141,9 @@ class AdminController extends Controller
                 'image' => $movie_image_path,
             ]);
 
-
         });
+
+        return redirect('/admin/dashboard');
 
     }
 

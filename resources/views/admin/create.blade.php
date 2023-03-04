@@ -63,6 +63,7 @@
 
                     <x-form.input
                         labelName="Domestic Box Office Revenue"
+                        type="number"
                         value="{{ old('movie_domestic_box_office') }}"
                         placeholder="Input domestic box office generated revenue"
                         name="movie_domestic_box_office">
@@ -76,6 +77,7 @@
                     <x-form.input
                         labelName="International Box Office Revenue"
                         value="{{ old('movie_international_box_office') }}"
+                        type="number"
                         placeholder="Input international box office generated revenue"
                         name="movie_international_box_office">
 
@@ -105,6 +107,7 @@
                     <x-form.input
                         value="{{ old('director_age') }}"
                         name="director_age"
+                        type="number"
                         placeholder="Enter director's age"
                         labelName="Director age">
 
