@@ -33,12 +33,17 @@ class AdminController extends Controller
 
         $request->validated();
 
-        $movie = Movie::findOrFail($id);
-        $movie_thumbnail =
-                         /* Str::of($movie->name)->snake() .
+        $path = $request->file('movie_thumbnail')->store('movie_thumbnails');
+
+        return $path;
+
+//        $movie = Movie::findOrFail($id);
+
+        /*$movie_thumbnail =
+                          Str::of($movie->name)->snake() .
                           '-' .
-                          time() .*/
-                          $request->file('movie_thumbnail')->store('movie_thumbnails');
+                          time() .
+                          $request->file('movie_thumbnail')->store('movie_thumbnails');*/
 
         /*DB::transaction(function () use($movie, $request, $movie_thumbnail) {
             $movie->name = $request->input('movie_name');
