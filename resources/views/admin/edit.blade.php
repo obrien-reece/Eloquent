@@ -98,10 +98,10 @@
                         </x-form.input>
 
                     </div>
-                    {{--<div class="col-md-6">
+                    <div class="col-md-6">
 
                     <span class="display-6">Edit - Director Section</span>
-                    --}}{{--Component for form inputs Director--}}{{--
+                    Component for form inputs Director
                     <x-form.input
                         value="{{ $movie->director->name }}"
                         name="director_name"
@@ -151,7 +151,7 @@
 
                     </x-form.input>
 
-                </div>--}}
+                </div>
                     <button class="mt-3 btn btn-success btn-block" type="submit">Update Database Collection</button>
                 </div>
         </form>
