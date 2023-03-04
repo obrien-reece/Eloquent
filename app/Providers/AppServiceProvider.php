@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(100);
         Gate::define('admin', function (User $user) {
-           return $user->name == 'OBrien Reece';
+           return $user->email == 'obrien@admin.org';
         });
     }
 }

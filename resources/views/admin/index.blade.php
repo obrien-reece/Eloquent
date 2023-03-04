@@ -22,7 +22,7 @@
                     @foreach($movies as $movie)
                         <span>{{ $counter++ }}.</span>
                         <span>{{ $movie->name }}</span> -
-                        <span>{!! Str::of(\Stevebauman\Purify\Facades\Purify::clean($movie->description))->limit(80) !!}</span>
+                        <span>{!! Str::of(\Stevebauman\Purify\Facades\Purify::clean($movie->description))->limit(90) !!}</span>
                         <span style="float: right">
 
                             <a
