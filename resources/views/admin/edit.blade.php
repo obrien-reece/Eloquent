@@ -27,21 +27,22 @@
 
                         <x-form.input
                             value="{{ $movie->studio }}"
-                            name="studio"
+                            name="movie_studio"
                             placeholder="Enter studio name"
                             labelName="Studio production name">
 
-                            @error('studio')
+                            @error('movie_studio')
                                  <span style="color: red">{{ $message }}</span>
                             @enderror
 
                         </x-form.input>
 
                         <x-form.text-area
+                            name="movie_description"
                             value="{!! \Stevebauman\Purify\Facades\Purify::clean($movie->description) !!}"
                             labelName="Movie Description">
 
-                            @error('description')
+                            @error('movie_description')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
 
@@ -64,9 +65,9 @@
                             labelName="Domestic Box Office Revenue"
                             value="{{ $movie->domestic_box_office }}"
                             placeholder="Input domestic box office generated revenue"
-                            name="domestic_box_office">
+                            name="movie_domestic_box_office">
 
-                            @error('domestic_box_office')
+                            @error('movie_domestic_box_office')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
 
@@ -76,9 +77,9 @@
                             labelName="International Box Office Revenue"
                             value="{{ $movie->international_box_office }}"
                             placeholder="Input international box office generated revenue"
-                            name="international_box_office">
+                            name="movie_international_box_office">
 
-                            @error('international_box_office')
+                            @error('movie_international_box_office')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
 
@@ -88,9 +89,9 @@
                             labelName="WorldWide Box Office Revenue"
                             value="{{ $movie->worldwide_box_office }}"
                             placeholder="Input worldwide box office generated revenue"
-                            name="worldwide_box_office">
+                            name="movie_worldwide_box_office">
 
-                            @error('worldwide_box_office')
+                            @error('movie_worldwide_box_office')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
 
@@ -115,11 +116,11 @@
 
                     <x-form.input
                         value="{{ $movie->director->age }}"
-                        name="age"
+                        name="director_age"
                         placeholder="Enter director's age"
                         labelName="Director age">
 
-                        @error('age')
+                        @error('director_age')
                         <span style="color: red">{{ $message }}</span>
                         @enderror
 
@@ -127,11 +128,11 @@
 
                     <x-form.text-area
                         rows="5"
-                        name="about"
+                        name="director_about"
                         value="{!! \Stevebauman\Purify\Facades\Purify::clean($movie->director->about) !!}"
                         labelName="Director's Description">
 
-                        @error('about')
+                        @error('director_about')
                         <span style="color: red">{{ $message }}</span>
                         @enderror
 

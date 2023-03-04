@@ -28,6 +28,8 @@ class AdminController extends Controller
 
     public function update(ValidateAdminEditRequest $request, $id) {
 
+        $movie = Movie::find($id);
+
     }
 
     public function create() {
