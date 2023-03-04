@@ -19,6 +19,8 @@ class Movie extends Model
         'description',
         'studio',
         'slug',
+        'image',
+        'director_id',
         'domestic_box_office',
         'international_box_office',
         'worldwide_box_office'

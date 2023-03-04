@@ -51,7 +51,7 @@
                         <x-form.input
                             type="file"
                             name="movie_thumbnail"
-                            labelName="Movie Thumbnail"
+                            labelName="Movie Thumbnail - Updating this image is purely optional"
                             value="{{ $movie->image }}"
                             placeholder="Select movie thumbnail">
 
@@ -129,7 +129,7 @@
                     <x-form.input
                         type="file"
                         name="director_image"
-                        labelName="Director's Photo"
+                        labelName="Director's Thumbnail - Updating this image is purely optional"
                         value="{{ $movie->director->image }}"
                         placeholder="Select director photo">
 
