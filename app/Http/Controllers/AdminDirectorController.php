@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ValidateAdminCreateRequest;
+use App\Http\Requests\ValidateAdminCreateDirectorRequest;
 use App\Http\Requests\ValidateAdminEditRequest;
 use App\Models\Director;
 use App\Models\Movie;
@@ -97,24 +97,16 @@ class AdminDirectorController extends Controller
     }
 
     public function create() {
-        return view('admin.create');
+        return view('admin.director_create');
     }
 
-    public function store(ValidateAdminCreateRequest $request) {
+    public function store(ValidateAdminCreateDirectorRequest $request) {
 
         $request->validated();
 
-      /*  $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
-
-        //Movies Image
-        $movie_image_path = $request->file('movie_thumbnail')->storeAs(
-            'movie_thumbnails',
-            Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
-        );*/
-
         //Directors Image
         $director_image_path = $request->file('director_image')->storeAs(
-            'public/director_image_thumbnails',
+            'director_image_thumbnails',
             Str::of($request->input('director_name'))->snake() . '.' . $request->director_image->extension()
         );
 
@@ -128,18 +120,6 @@ class AdminDirectorController extends Controller
                 'slug' => Str::of($request->input('director_name'))->slug('-'),
                 'image' => $director_image_path,
             ]);
-
-            /*$movie = Movie::create([
-                'name' => $request->input('movie_name'),
-                'studio' => $request->input('movie_studio'),
-                'director_id' => $director->id,
-                'description' => $request->input('movie_description'),
-                'slug' => Str::of($request->input('movie_name'))->slug('-'),
-                'domestic_box_office' => $request->input('movie_domestic_box_office'),
-                'international_box_office' => $request->input('movie_international_box_office'),
-                'worldwide_box_office' => $worldwide_box_office,
-                'image' => $movie_image_path,
-            ]);*/
 
         });
 
