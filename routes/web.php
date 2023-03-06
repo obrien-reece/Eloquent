@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminActorController;
+use App\Http\Controllers\AdminDirectorController;
+use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\DirectorsController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\PagesController;
@@ -22,13 +24,17 @@ Auth::routes();
 
 //Admin
 Route::middleware('can:admin')->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index']);
-    Route::get('/admin/create', [AdminController::class, 'create'])->name('create');
-    Route::post('/admin', [AdminController::class, 'store']);
-    Route::get('/admin/{admin:slug}/edit', [AdminController::class, 'edit']);
-    Route::get('/admin/{admin:slug}', [AdminController::class, 'show']);
-    Route::put('/admin/{admin}', [AdminController::class, 'update']);
-    Route::delete('/admin/{admin}', [AdminController::class, 'destroy']);
+    Route::get('/admin/dashboard', [AdminDirectorController::class, 'index']);
+    Route::get('/admin/director/create', [AdminDirectorController::class, 'create'])->name('director.create');
+    Route::post('/admin/director', [AdminDirectorController::class, 'store']);
+    Route::get('/admin/{admin:slug}/edit', [AdminDirectorController::class, 'edit']);
+    Route::get('/admin/{admin:slug}', [AdminDirectorController::class, 'show']);
+    Route::put('/admin/{admin}', [AdminDirectorController::class, 'update']);
+    Route::delete('/admin/{admin}', [AdminDirectorController::class, 'destroy']);
+    Route::get('/admin/movie/create', [AdminMovieController::class, 'create'])->name('movie.create');
+    Route::post('/admin/movie', [AdminMovieController::class, 'store']);
+    Route::get('/admin/actor/create', [AdminActorController::class, 'create'])->name('actor.create');
+    Route::post('/admin/actor', [AdminActorController::class, 'store']);
 });
 
 Route::middleware('auth')->group(function () {

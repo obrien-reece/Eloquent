@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateAdminCreateRequest extends FormRequest
+class ValidateAdminCreateDirectorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,6 @@ class ValidateAdminCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'movie_name' => 'required | min:2',
-            'movie_studio' => 'required | min:2',
-            'movie_description' => 'required | min:500',
-            'movie_thumbnail' => 'required',
-            'movie_domestic_box_office' => 'required',
-            'movie_international_box_office' => 'required',
             'director_name' => 'required | min:2',
             'director_age' => 'required | min:2 | integer',
             'director_about' => 'required | min:200',
@@ -37,15 +31,6 @@ class ValidateAdminCreateRequest extends FormRequest
 
     public function messages() {
         return [
-            'movie_name.required' => 'This field cannot be submitted empty',
-            'movie_name.min' => 'Not less than 2 characters are allowed',
-            'movie_studio.required' => 'This field cannot be submitted empty',
-            'movie_studio.min' => 'Not less than 2 characters are allowed',
-            'movie_description.required' => 'This field cannot be submitted empty',
-            'movie_description.min' => 'Not less than 500 characters are allowed',
-            'movie_thumbnail.required' => 'This field cannot be submitted empty',
-            'movie_domestic_box_office.required' => 'This field cannot be submitted empty',
-            'movie_international_box_office.required' => 'This field cannot be submitted empty',
             'director_name.required' => 'This field cannot be submitted empty',
             'director_name.min' => 'Not less than 2 characters are allowed',
             'director_age.required' => 'This field cannot be submitted empty',

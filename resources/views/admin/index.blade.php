@@ -9,8 +9,24 @@
 
                 <a
                     style="text-decoration: none;color: black"
-                    href="{{ route('create') }}">
-                    <span>Create New Post</span>
+                    href="{{ route('director.create') }}">
+                    <span>First, publish a director</span>
+                </a>
+
+                <br>
+
+                <a
+                    style="text-decoration: none;color: black"
+                    href="{{ route('movie.create') }}">
+                    <span>Second, Add a movie post</span>
+                </a>
+
+                <br>
+
+                <a
+                    style="text-decoration: none;color: black"
+                    href="{{ route('actor.create') }}">
+                    <span>Third, Add actors from the movie</span>
                 </a>
 
             </div>

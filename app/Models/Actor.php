@@ -12,7 +12,7 @@ class Actor extends Model
 
     protected $table = 'actors';
 
-    protected $fillable = ['name', 'age', 'about', 'movie_id'];
+    protected $fillable = ['name', 'age', 'slug', 'about', 'movie_id'];
 
     public function movie(): BelongsToMany
     {
