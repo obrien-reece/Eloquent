@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class AdminMovieController extends Controller
+class AdminDirectorController extends Controller
 {
     public function index() {
         $movies = Movie::orderByDesc('id')->paginate(20);
@@ -104,13 +104,13 @@ class AdminMovieController extends Controller
 
         $request->validated();
 
-        $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
+      /*  $worldwide_box_office = $request->input('movie_domestic_box_office') + $request->input('movie_international_box_office');
 
         //Movies Image
         $movie_image_path = $request->file('movie_thumbnail')->storeAs(
             'movie_thumbnails',
             Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
-        );
+        );*/
 
         //Directors Image
         $director_image_path = $request->file('director_image')->storeAs(
@@ -120,7 +120,7 @@ class AdminMovieController extends Controller
 
 
         //Start a DB transaction
-        DB::transaction(function () use($request, $worldwide_box_office, $movie_image_path, $director_image_path) {
+        DB::transaction(function () use($request,$director_image_path) {
             $director = Director::create([
                 'name' =>  $request->input('director_name'),
                 'age' => $request->input('director_age'),
@@ -129,7 +129,7 @@ class AdminMovieController extends Controller
                 'image' => $director_image_path,
             ]);
 
-            $movie = Movie::create([
+            /*$movie = Movie::create([
                 'name' => $request->input('movie_name'),
                 'studio' => $request->input('movie_studio'),
                 'director_id' => $director->id,
@@ -139,7 +139,7 @@ class AdminMovieController extends Controller
                 'international_box_office' => $request->input('movie_international_box_office'),
                 'worldwide_box_office' => $worldwide_box_office,
                 'image' => $movie_image_path,
-            ]);
+            ]);*/
 
         });
 

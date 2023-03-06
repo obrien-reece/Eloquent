@@ -9,10 +9,10 @@
             @csrf
 
             <div class="row">
-                <div class="col-md-6">
+                {{--<div class="col-md-6">
 
                     <span class="display-6">Create - Movie Section</span>
-                    {{--Component for form inputs Movie--}}
+                    --}}{{--Component for form inputs Movie--}}{{--
                     <x-form.input
                         value="{{ old('movie_name') }}"
                         name="movie_name"
@@ -87,10 +87,10 @@
 
                     </x-form.input>
 
-                </div>
-                <div class="col-md-6">
+                </div>--}}
+                <div class="col-md-6 m-auto">
 
-                    <span class="display-6">Edit - Director Section</span>
+                    <span class="display-6">Publish a director</span>
                     {{--Component for form inputs Director--}}
                     <x-form.input
                         value="{{ old('director_name') }}"
@@ -143,7 +143,7 @@
                     </x-form.input>
 
                 </div>
-                <button class="mt-3 btn btn-success btn-block" type="submit">Update Database Collection</button>
+                <button class="mt-3 btn btn-success btn-block" type="submit">Publish Post</button>
             </div>
         </form>
     </div>

@@ -22,22 +22,22 @@ class ValidateAdminCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'movie_name' => 'required | min:2',
+            /*'movie_name' => 'required | min:2',
             'movie_studio' => 'required | min:2',
             'movie_description' => 'required | min:500',
             'movie_thumbnail' => 'required',
             'movie_domestic_box_office' => 'required',
-            'movie_international_box_office' => 'required',
-            /*'director_name' => 'required | min:2',
+            'movie_international_box_office' => 'required',*/
+            'director_name' => 'required | min:2',
             'director_age' => 'required | min:2 | integer',
             'director_about' => 'required | min:200',
-            'director_image' => 'required',*/
+            'director_image' => 'required',
         ];
     }
 
     public function messages() {
         return [
-            'movie_name.required' => 'This field cannot be submitted empty',
+            /*'movie_name.required' => 'This field cannot be submitted empty',
             'movie_name.min' => 'Not less than 2 characters are allowed',
             'movie_studio.required' => 'This field cannot be submitted empty',
             'movie_studio.min' => 'Not less than 2 characters are allowed',
@@ -45,7 +45,7 @@ class ValidateAdminCreateRequest extends FormRequest
             'movie_description.min' => 'Not less than 500 characters are allowed',
             'movie_thumbnail.required' => 'This field cannot be submitted empty',
             'movie_domestic_box_office.required' => 'This field cannot be submitted empty',
-            'movie_international_box_office.required' => 'This field cannot be submitted empty',
+            'movie_international_box_office.required' => 'This field cannot be submitted empty',*/
             'director_name.required' => 'This field cannot be submitted empty',
             'director_name.min' => 'Not less than 2 characters are allowed',
             'director_age.required' => 'This field cannot be submitted empty',

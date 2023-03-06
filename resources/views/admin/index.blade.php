@@ -10,7 +10,7 @@
                 <a
                     style="text-decoration: none;color: black"
                     href="{{ route('create') }}">
-                    <span>Create New Movie Post</span>
+                    <span>First, publish a director</span>
                 </a>
 
                 <br>
