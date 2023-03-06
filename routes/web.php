@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminActorController;
 use App\Http\Controllers\AdminDirectorController;
 use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\DirectorsController;
@@ -32,6 +33,8 @@ Route::middleware('can:admin')->group(function () {
     Route::delete('/admin/{admin}', [AdminDirectorController::class, 'destroy']);
     Route::get('/admin/movie/create', [AdminMovieController::class, 'create'])->name('movie.create');
     Route::post('/admin/movie', [AdminMovieController::class, 'store']);
+    Route::get('/admin/actor/create', [AdminActorController::class, 'create'])->name('actor.create');
+    Route::post('/admin/actor', [AdminActorController::class, 'store']);
 });
 
 Route::middleware('auth')->group(function () {

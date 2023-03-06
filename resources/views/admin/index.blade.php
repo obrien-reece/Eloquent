@@ -21,6 +21,14 @@
                     <span>Second, Add a movie post</span>
                 </a>
 
+                <br>
+
+                <a
+                    style="text-decoration: none;color: black"
+                    href="{{ route('actor.create') }}">
+                    <span>Third, Add actors from the movie</span>
+                </a>
+
             </div>
             <div class="col-md-8">
                 <div class="mb-2"><span><i>Available Posts</i></span></div>
