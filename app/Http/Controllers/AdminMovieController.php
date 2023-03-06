@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class AdminController extends Controller
+class AdminMovieController extends Controller
 {
     public function index() {
         $movies = Movie::orderByDesc('id')->paginate(20);

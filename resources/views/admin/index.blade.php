@@ -10,7 +10,16 @@
                 <a
                     style="text-decoration: none;color: black"
                     href="{{ route('create') }}">
-                    <span>Create New Post</span>
+                    <span>Create New Movie Post</span>
+                </a>
+
+                <br>
+
+                <a
+                    style="text-decoration: none;color: black"
+                    href="{{ route('create') }}">
+                    <span>Add
+                        Movie Post</span>
                 </a>
 
             </div>

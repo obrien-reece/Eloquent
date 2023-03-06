@@ -28,10 +28,10 @@ class ValidateAdminCreateRequest extends FormRequest
             'movie_thumbnail' => 'required',
             'movie_domestic_box_office' => 'required',
             'movie_international_box_office' => 'required',
-            'director_name' => 'required | min:2',
+            /*'director_name' => 'required | min:2',
             'director_age' => 'required | min:2 | integer',
             'director_about' => 'required | min:200',
-            'director_image' => 'required',
+            'director_image' => 'required',*/
         ];
     }
 
