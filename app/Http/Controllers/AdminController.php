@@ -147,4 +147,12 @@ class AdminController extends Controller
 
     }
 
+    public function destroy($id) {
+        $movie = Movie::findOrFail($id);
+
+        $movie->delete();
+
+        return redirect('/admin/dashboard');
+    }
+
 }

@@ -37,9 +37,11 @@
                                 <i class="fa-solid fa-pen"></i>
                             </a>
 
-                            <a style="text-decoration: none;color: red" href="">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
+                            <form action="/admin/{{ $movie->id }}" method="Post">
+                                @method('DELETE')
+                                @csrf
+                                <button onclick="return confirm('Are you sure you want to delete this post')" style="color: red" class="btn"><i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </span>
 
                         <br><hr>

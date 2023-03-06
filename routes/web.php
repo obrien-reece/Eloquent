@@ -24,10 +24,11 @@ Auth::routes();
 Route::middleware('can:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index']);
     Route::get('/admin/create', [AdminController::class, 'create'])->name('create');
+    Route::post('/admin', [AdminController::class, 'store']);
     Route::get('/admin/{admin:slug}/edit', [AdminController::class, 'edit']);
     Route::get('/admin/{admin:slug}', [AdminController::class, 'show']);
     Route::put('/admin/{admin}', [AdminController::class, 'update']);
-    Route::post('/admin', [AdminController::class, 'store']);
+    Route::delete('/admin/{admin}', [AdminController::class, 'destroy']);
 });
 
 Route::middleware('auth')->group(function () {
