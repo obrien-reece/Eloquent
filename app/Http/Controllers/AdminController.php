@@ -108,7 +108,7 @@ class AdminController extends Controller
 
         //Movies Image
         $movie_image_path = $request->file('movie_thumbnail')->storeAs(
-            'public/movie_thumbnails',
+            'movie_thumbnails',
             Str::of($request->input('movie_name'))->snake() . '.' . $request->movie_thumbnail->extension()
         );
 

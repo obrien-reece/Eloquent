@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-2">
                 <div style="padding: 4px">
-                <img class="directors_image" src="/images/directors/nolan.jpg" style="border-radius: 5px" width="100%" alt="Director's image">
+                <img class="directors_image" src="{{ asset('/storage/' . $author->image) }}" style="border-radius: 5px" width="100%" alt="Director's image">
                 <div class="mt-2">
                     <span>Name: {{ $author->name }} </span>
                     <br>

@@ -51,7 +51,7 @@
                                 <a class="dropdown-item" href="/admin/dashboard">
                                     {{ __('Dashboard') }}
                                 </a>
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="/admin/create">
                                     {{ __('New Movie Post') }}
                                 </a>
                             @endcan

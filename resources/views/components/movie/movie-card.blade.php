@@ -2,7 +2,7 @@
     <div class="card box-shadow-hover pointer">
         <div class="card shadow">
             <a href="/movies/{{ $movie->slug }}">
-                <img src="/images/banner.jpg" style="border-radius: 5px" width="100%" alt="">
+                <img src="{{ asset('/storage/' . $movie->image) }}" style="border-radius: 5px" width="100%" alt="">
             </a>
             <div class="card-body">
                 <span class="card-left-text">
