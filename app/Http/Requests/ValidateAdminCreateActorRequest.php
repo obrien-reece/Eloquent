@@ -24,7 +24,7 @@ class ValidateAdminCreateActorRequest extends FormRequest
         return [
             'actors_name' => 'required | min:2',
             'actors_age' => 'required | min:2 | integer',
-            'actors_about' => 'required | min:200',
+            'actors_about' => 'required | min:100',
         ];
     }
 

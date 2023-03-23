@@ -24,7 +24,7 @@ class ValidateAdminCreateMovieRequest extends FormRequest
         return [
             'movie_name' => 'required | min:2',
             'movie_studio' => 'required | min:2',
-            'movie_description' => 'required | min:500',
+            'movie_description' => 'required | min:100',
             'movie_thumbnail' => 'required',
             'movie_domestic_box_office' => 'required',
             'movie_international_box_office' => 'required',
