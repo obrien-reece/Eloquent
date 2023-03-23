@@ -30,7 +30,7 @@ class ValidateAdminEditRequest extends FormRequest
             'movie_international_box_office' => 'required',
             'director_name' => 'required | min:2',
             'director_age' => 'required | min:2',
-            'director_about' => 'required | min:200',
+            'director_about' => 'required | min:100',
 //            'director_image' => 'required',
         ];
     }

@@ -89,7 +89,7 @@
                     <div class="col-md-6">
 
                     <span class="display-6">Edit - Director Section</span>
-                    Component for form inputs Director
+{{--                    Component for form inputs Director--}}
                     <x-form.input
                         value="{{ $movie->director->name }}"
                         name="director_name"

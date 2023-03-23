@@ -7,27 +7,35 @@
         <div class="row justify-content-center">
             <div class="col-md-2">
 
-                <a
-                    style="text-decoration: none;color: black"
-                    href="{{ route('director.create') }}">
-                    <span>First, publish a director</span>
-                </a>
+            <ol>
+               <li>
+                   <a
+                       style="text-decoration: none;color: black"
+                       href="{{ route('director.create') }}">
+                       <span>First, publish a director</span>
+                   </a>
+               </li>
 
                 <br>
 
-                <a
-                    style="text-decoration: none;color: black"
-                    href="{{ route('movie.create') }}">
-                    <span>Second, Add a movie post</span>
-                </a>
+                <li>
+                    <a
+                        style="text-decoration: none;color: black"
+                        href="{{ route('movie.create') }}">
+                        <span>Second, Add a movie post</span>
+                    </a>
+                </li>
 
                 <br>
 
-                <a
-                    style="text-decoration: none;color: black"
-                    href="{{ route('actor.create') }}">
-                    <span>Third, Add actors from the movie</span>
-                </a>
+                <li>
+                    <a
+                        style="text-decoration: none;color: black"
+                        href="{{ route('actor.create') }}">
+                        <span>Third, Add actors from the movie</span>
+                    </a>
+                </li>
+            </ol>
 
             </div>
             <div class="col-md-8">
